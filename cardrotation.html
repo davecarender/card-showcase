@@ -6,47 +6,37 @@
     <title>Nox Mortua Card Viewer</title>
     <link rel="icon" href="./assets/images/vampire-favicon.png" type="image/png">
     <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
     <meta name="description" content="Nox Mortua card viewer">
+
     <style>
-    /* Page-local styles to center a single card and ensure proper flip visuals */
     html,body{height:100%;overflow-y:hidden}
     .solo-stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:transparent}
     .solo-card-wrapper{width:var(--card-w);max-width:460px}
-    /* Ensure the card sizing matches the site's variables but allow larger render */
     .solo-card-wrapper .card{width:100%;height:auto}
     .solo-card-wrapper .card-inner{height:calc(var(--card-h) * 0.9)}
-    /* Ensure faces show properly when using absolute-positioned faces from main stylesheet */
     .solo-card-wrapper .card-face{background-size:contain;background-position:center;background-repeat:no-repeat;height:100%}
     </style>
     <style>
-    /* Site label placed under the card */
     .site-label{font-family:serif;display:block;text-align:center;color:var(--muted-text,#ddd);margin-top:18px;font-size:14px;letter-spacing:0.06em}
     </style>
-    <!-- shadow removed -->
     <style>
-    /* Disable hover 'pop' and tilt only for the koz card on this page */
     .koz-card:not(.initializing):hover{transform:none !important}
     .koz-card .card-tilt{transform:none !important}
-    /* do not override .card-inner so flip still works */
     </style>
     <style>
-    /* Page-local background: use the static cardRotateBackground image at full opacity */
     body.cardrotation{background-image:url('./assets/images/cardRotateBackground.png');background-size:cover;background-position:center center;background-repeat:no-repeat}
-    /* Ensure content sits above the background */
     .solo-stage{position:relative;z-index:1;background:transparent}
     </style>
 </head>
 
 <body class="cardrotation">
-    <!-- static background image applied via page-local CSS -->
     <main class="solo-stage">
         <div class="solo-card-wrapper">
             <div class="card koz-card" id="koz-card" tabindex="0" role="button" aria-label="Kozilek proxy card">
                 <div class="card-tilt">
                     <div class="card-inner">
-                        <div class="card-face card-front" style="background-image:url('./assets/images/rotate_front.png')"></div>
-                        <div class="card-face card-back" style="background-image:url('./assets/images/rotate_back.png')"></div>
+                        <!-- // place card front image here --> <div class="card-face card-front" style="background-image:url('./assets/images/rotate_front.png')"></div>
+                        <!-- // place card back image here --> <div class="card-face card-back" style="background-image:url('./assets/images/rotate_back.png')"></div>
                     </div>
                 </div>
             </div>
@@ -57,7 +47,7 @@
     </main>
 
     <script>
-    // Page-local flip loop: continuously flip the Koz card back and forth
+    // Page-local flip loop: continuously flip the card back and forth
     (function(){
     const FLIP_INTERVAL = 3000; // ms between flips (tweakable)
         const START_DELAY = 220; // initial delay before first flip
