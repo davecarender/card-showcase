@@ -36,8 +36,8 @@ body{font-family:Inter, system-ui, sans-serif;color:#fff;padding-bottom:44px}
 .card-face{position:absolute;inset:0;border-radius:12px;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden; -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform,opacity; background-size:contain;background-repeat:no-repeat;background-position:center;box-shadow:none;transition:none;background-color:transparent}
 .card:hover .card-face{box-shadow:none}
 
-.card-front{background-image:url('../images/proxies/brako-front.png');background-color:transparent;transform:rotateY(0deg)}
-.card-back{background-image:url('../images/proxies/brako-back.png');transform:rotateY(180deg);background-color:transparent}
+.card-front{background-image:url('../images/rotate_front.png');background-color:transparent;transform:rotateY(0deg)}
+.card-back{background-image:url('../images/rotate_back.png');transform:rotateY(180deg);background-color:transparent}
 
 /* Focus styles for keyboard users: remove default outline and use subtle shadow */
 .card:focus{outline:none}

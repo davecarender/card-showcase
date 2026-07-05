@@ -91,21 +91,3 @@
     });
 
 })();
-
-// Randomize page background
-(function(){
-    const images = [
-        '../images/duallands/duallands-bg1.png',
-        '../images/duallands/duallands-bg2.png',
-        '../images/duallands/duallands-bg3.png'
-    ];
-
-    function pickRandom(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-
-    // Apply on DOMContentLoaded so stylesheet is available to read the var
-    window.addEventListener('DOMContentLoaded', ()=>{
-        const chosen = pickRandom(images);
-        const cssValue = `url('${chosen}')`;
-        document.documentElement.style.setProperty('--duallands-bg', cssValue);
-    });
-})();
